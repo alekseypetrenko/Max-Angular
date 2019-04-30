@@ -10,6 +10,8 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No server was created';
   serverName = '';
   serverCreated = false;
+  /*servers - for the ngFor directive*/
+  servers = ['Test server', 'Test server 2']
   constructor() {
     setTimeout(() => {
       this.allowServer = true;
@@ -21,6 +23,8 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
+    /*when the new server is created - push it to the servers array*/
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created. Name is ' + this.serverName;
   }
 
